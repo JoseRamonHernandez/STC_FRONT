@@ -1,0 +1,79 @@
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Mesa de Ayuda - Directivo</a>
+  
+      <!-- Menú de hamburguesa derecho -->
+      <div class="d-flex justify-content-end">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Toggle right navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  
+
+  
+  <!-- Offcanvas Menú derecho -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">Right Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/home-direct">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Tickets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Cerrar Sesión</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Ticket</th>
+          <th scope="col">Status</th>
+          <th scpoe="col">Fecha de Aplicación</th>
+          <th scope="col">Resumen</th>
+          <th scope="col">Area</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr *ngFor="let ticket of tickets">
+          <th scope="row">{{ ticket.ticket }}</th>
+            <!-- Columna Status con íconos de círculos de colores -->
+        <td [ngClass]="{
+          'text-secondary': ticket.status === 'pendiente', 
+          'text-success': ticket.status === 'aprobado', 
+          'text-danger': ticket.status === 'rechazado',
+          'text-dark': ticket.status  === 'cerrado'
+      }">
+        <i [ngClass]="{
+          'bi-circle-fill': ticket.status === 'pendiente', 
+          'bi-check-circle-fill': ticket.status === 'aprobado', 
+          'bi-x-circle-fill': ticket.status === 'rechazado',
+          'bi-circle': ticket.status === 'cerrado', 
+          'fs-3': true
+       }"></i>
+      </td>
+          <td>{{ ticket.date_application }}</td>
+          <td>{{ ticket.resumen }}</td>
+          <td>{{ ticket.area }}</td>
+          <td><button type="button" class="btn btn-primary"
+            (click)="show(ticket.ticket, ticket.resumen, ticket.description, ticket.user, ticket.status, ticket.area, ticket.date_application)">
+            Visualizar
+        </button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

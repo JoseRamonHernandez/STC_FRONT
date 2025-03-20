@@ -1,0 +1,24 @@
+
+<div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>CREAR <br><span>CUENTA</span></div>
+		</div>
+		<br>
+        <br>
+		<div class="login">
+			<form (ngSubmit)="onRegister()">
+				<input type="text" placeholder="Nombre" name="name" [(ngModel)]="name"><br><br>
+				<input type="text" placeholder="Apellido" name="lastname" [(ngModel)]="lastname"><br><br>
+                <input type="text" placeholder="Numero de Empleado" name="n_empleado" [(ngModel)]="n_empleado"><br><br>
+                <input type="text" placeholder="Correo" name="email" [(ngModel)]="email"><br><br>
+                <input type="text" placeholder="Contraseña" name="password1" [(ngModel)]="password1"><br><br>
+                <input type="password" placeholder="Repetir Contraseña" name="password2" [(ngModel)]="password2"><br><br>
+				<div class="container d-flex gap-3">
+					<button type="submit" class="btn btn-outline-primary">Crear Cuenta</button> 
+					<button type="button" class="btn btn-outline-secondary" routerLink="/login">Iniciar Sesión</button> </div>
+			</form>
+		</div>
+    
+
+      

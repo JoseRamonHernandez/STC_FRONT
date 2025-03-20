@@ -1,0 +1,63 @@
+<header>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <!-- Menú de hamburguesa izquierdo -->
+          
+          <a class="navbar-brand" href="#">STC</a>
+      
+          <!-- Menú de hamburguesa derecho -->
+          <div class="d-flex justify-content-end">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Toggle right navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+      
+      <!-- Offcanvas Menú derecho -->
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasRightLabel">Menu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="../../home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/">Cerrar Sesión</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+
+<div class="container">
+    <h2>Editar Ticket</h2>
+    <form (ngSubmit)="updateTicket()">
+      <div class="mb-3">
+        <label for="ticketId" class="form-label">Ticket ID</label>
+        <input type="text" class="form-control" id="ticketId" [(ngModel)]="ticket.ticket" name="ticketId" readonly>
+      </div>
+      <div class="mb-3">
+        <label for="resumen" class="form-label">Resumen</label>
+        <input type="text" class="form-control" id="resumen" [(ngModel)]="ticket.resumen" name="resumen">
+      </div>
+      <div class="mb-3">
+        <label for="resumen" class="form-label">Descripcion</label>
+        <input type="text" class="form-control" id="description" [(ngModel)]="ticket.description" name="description">
+      </div>
+      <div class="mb-3">
+        <label for="area" class="form-label">Área</label>
+        <input type="text" class="form-control" id="area" [(ngModel)]="ticket.area" name="area">
+      </div>
+      <div class="mb-3">
+        <label for="ticketId" class="form-label">Comentario</label>
+        <input type="text" class="form-control" id="comentario" [(ngModel)]="ticket.comentario" name="comentario" readonly>
+      </div>
+      <button type="submit" class="btn btn-primary">Actualizar Ticket</button>
+    </form>
+  </div>
+  
