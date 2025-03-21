@@ -1,0 +1,107 @@
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+     
+  
+      <a class="navbar-brand" href="#">Mesa de Ayuda - Técnico</a>
+  
+      <!-- Menú de hamburguesa derecho -->
+      <div class="d-flex justify-content-end">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" aria-label="Toggle right navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Offcanvas Menú izquierdo -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasLeftLabel">Bandeja de Correos</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Correo 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Correo 2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Correo 3</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- Offcanvas Menú derecho -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">Menu</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/home-tech">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active">Usuarios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Cerrar Sesión</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+<div class="container">
+    <h2>Alta de usuarios</h2>
+</div>
+
+  <div class="container">
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Numero de Empleado</th>
+          <th scope="col">Status</th>
+          <th scope="col">Nombre</th>
+          <th scpoe="col">Apellido</th>
+          <th scope="col">Correo</th>
+          <th scope="col">User Type</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr *ngFor="let user of users">
+          <th scope="row">{{ user.n_empleado }}</th>
+            <!-- Columna Status con íconos de círculos de colores -->
+        <td [ngClass]="{
+          'text-secondary': user.status === 'pending', 
+          'text-success': user.status === 'approved'
+      }">
+        <i [ngClass]="{
+          'bi-circle-fill': user.status === 'pending', 
+          'bi-check-circle-fill': user.status === 'approved', 
+          'fs-3': true
+       }"></i>
+      </td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.lastname }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.type_user }}</td>
+        <td><button type="button" class="btn btn-success"
+          [disabled]="user.status === 'approved'"
+          [routerLink]="['/reply_user', user.n_empleado]">
+          Habilitar
+        </button></td>
+        <td><button type="button" class="btn btn-dark"
+          [disabled]="user.status === 'pending'"
+          [routerLink]="['/reply_user', user.n_empleado]">
+          Deshabilitar
+        </button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

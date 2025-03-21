@@ -36,7 +36,7 @@ export class HomeTechComponent implements OnInit {
           this.tickets = response;
         }
       }
-    })
+    });
   }
 
 

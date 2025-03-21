@@ -9,6 +9,8 @@ import { CreateTicketCComponent } from './create-ticket-c/create-ticket-c.compon
 import { EditTicketComponent } from './edit-ticket/edit-ticket.component';
 import { ReplyTicketComponent } from './reply-ticket/reply-ticket.component';
 import { ShowTicketsComponent } from './show-tickets/show-tickets.component';
+import { UserRegComponent } from './user-reg/user-reg.component';
+import { ReplyUserComponent } from './reply-user/reply-user.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },  // Ruta por defecto que llevará a Login
@@ -18,6 +20,8 @@ const routes: Routes = [
   { path: 'create_ticket', component: CreateTicketCComponent }, // Ruta de colaborador
   { path: 'edit_ticket/:ticket_id', component: EditTicketComponent}, // Ruta de colaborador
   { path: 'home-tech', component: HomeTechComponent },
+  { path: 'user_reg', component: UserRegComponent }, 
+  { path: 'reply_user/:user_id', component: ReplyUserComponent },
   { path: 'reply_ticket/:ticket_id', component: ReplyTicketComponent},
   { path: 'home-direct', component: HomeDirectComponent },
   { path: 'show_tickets', component: ShowTicketsComponent}

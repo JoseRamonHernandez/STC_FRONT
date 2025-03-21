@@ -56,6 +56,9 @@
         <a class="nav-link active">Home</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link active" routerLink="/user_reg">Usuarios</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" routerLink="/">Cerrar Sesión</a>
       </li>
     </ul>
@@ -70,6 +73,7 @@
       <tr>
         <th scope="col">Ticket</th>
         <th scope="col">Status</th>
+        <th scope="col">Usuario</th>
         <th scpoe="col">Fecha de Aplicación</th>
         <th scope="col">Resumen</th>
         <th scope="col">Area</th>
@@ -95,6 +99,7 @@
         'fs-3': true
      }"></i>
     </td>
+        <td>{{ ticket.user }}</td>
         <td>{{ ticket.date_application }}</td>
         <td>{{ ticket.resumen }}</td>
         <td>{{ ticket.area }}</td>

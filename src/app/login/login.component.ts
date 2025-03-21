@@ -110,7 +110,7 @@ export class LoginComponent implements OnInit {
 
   alertaInfo(){
     Swal.fire({
-      title: "Tu usuario aun no ha sido aprovado, contacta a soporte.",
+      title: "Tu usuario aun no ha sido aprobado, contacta a soporte.",
       icon: "info"
     });
   }

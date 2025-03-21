@@ -145,7 +145,7 @@ export class ReplyTicketComponent implements OnInit {
             comentario: justificacion
           }
     
-          this.http.put(`http://localhost:9000/api/ticket/${ticket_id}`, ticket_put).subscribe({
+          this.http.put(`http://localhost:9000/api/ticket/put/decline/${ticket_id}`, ticket_put).subscribe({
             next: (response) => {
               console.log('Ticket actualizado correctamente', response);
               // Redirigir o mostrar un mensaje de éxito

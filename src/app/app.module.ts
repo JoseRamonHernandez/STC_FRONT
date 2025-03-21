@@ -13,7 +13,9 @@ import { HomeDirectComponent } from './home-direct/home-direct.component';
 import { CreateTicketCComponent } from './create-ticket-c/create-ticket-c.component';
 import { EditTicketComponent } from './edit-ticket/edit-ticket.component';
 import { ReplyTicketComponent } from './reply-ticket/reply-ticket.component';
-import { ShowTicketsComponent } from './show-tickets/show-tickets.component'; 
+import { ShowTicketsComponent } from './show-tickets/show-tickets.component';
+import { UserRegComponent } from './user-reg/user-reg.component';
+import { ReplyUserComponent } from './reply-user/reply-user.component'; 
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ShowTicketsComponent } from './show-tickets/show-tickets.component';
     CreateTicketCComponent,
     EditTicketComponent,
     ReplyTicketComponent,
-    ShowTicketsComponent
+    ShowTicketsComponent,
+    UserRegComponent,
+    ReplyUserComponent
   ],
   imports: [
     BrowserModule,
